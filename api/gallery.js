@@ -40,7 +40,17 @@ async function viaPublicView(folderId, depth = 0) {
   });
   if (!r.ok) throw new Error('Folder view ' + r.status);
   const html = await r.text();
+  if (!/flip-entr/.test(html)) {
+    if (/accounts\.google\.com|ServiceLogin|signin/i.test(html)) throw new Error('Folder is not shared publicly. Set it to "Anyone with the link can view".');
+    if (!/<html/i.test(html)) throw new Error('Unexpected response from Google Drive');
+  }
   const out = [];
+  // fallback: collect any /file/d/<id> links if the entry markup changes
+  if (!/class="flip-entry"/.test(html)) {
+    const seen = new Set();
+    for (const m of html.matchAll(/\/file\/d\/([\w-]{20,})/g)) if (!seen.has(m[1])) { seen.add(m[1]); out.push({ id: m[1], name: '', mime: '' }); }
+    return out;
+  }
   const parts = html.split(/<div class="flip-entry"/).slice(1);
   for (const part of parts) {
     const id = (part.match(/id="entry-([\w-]+)"/) || [])[1];
@@ -66,7 +76,7 @@ module.exports = async (req, res) => {
       return type === 'photos' ? isImg || (!isVid && !f.mime) : isVid || (!isImg && !f.mime);
     });
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=86400');
-    res.status(200).json({ type, count: items.length, items });
+    res.status(200).json({ type, count: items.length, items, source: key ? 'drive-api' : 'public-folder-view' });
   } catch (e) {
     res.setHeader('Cache-Control', 's-maxage=30');
     res.status(502).json({ type, items: [], error: String(e.message || e) });
