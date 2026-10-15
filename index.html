@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="img/mark.png">
+<meta property="og:title" content="Dharshik Computers, Villupuram">
+<meta property="og:description" content="Laptop & desktop sales, chip-level repair and doorstep service in Villupuram. Call +91 73392 70235.">
+<meta property="og:image" content="img/mark.png">
+<title>Dharshik Computers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dharshik Computers, Villupuram — laptop and desktop sales, chip-level motherboard repair, software installation and doorstep service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&family=Hind+Madurai:wght@400;600;700&display=swap">
+<style>
+/* Layout: "lit service bench" — a cinematic 3D hero on an aurora night-sky ground, then glass bento sections; orange is the only action colour */
+:root{
+  --bg:#f3f6ff; --bg2:#e9eefc; --surface:rgba(255,255,255,.72); --surface-solid:#ffffff;
+  --line:rgba(16,32,88,.12); --line-strong:rgba(16,32,88,.22);
+  --fg:#0b1437; --muted:#4d5b86; --soft:#7a86ad;
+  --navy:#13246b; --blue:#2f6bff; --cyan:#19b8ff;
+  --amber:#ffae12; --orange:#ff5f0f; --on-accent:#1d0c00;
+  --ok:#15b865; --bad:#e5484d;
+  --aurora1:rgba(47,107,255,.20); --aurora2:rgba(255,95,15,.16); --aurora3:rgba(25,184,255,.16);
+  --grid:rgba(19,36,107,.06); --shadow:0 30px 70px -30px rgba(19,36,107,.35);
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --tamil:"Hind Madurai","Noto Sans Tamil","Latha",sans-serif;
+  --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#040714; --bg2:#070c22; --surface:rgba(16,26,66,.55); --surface-solid:#0c1534;
+  --line:rgba(140,165,255,.14); --line-strong:rgba(140,165,255,.26);
+  --fg:#eef2ff; --muted:#a3afd6; --soft:#7684b3;
+  --navy:#c9d5ff; --blue:#4f86ff; --cyan:#38c6ff;
+  --aurora1:rgba(47,107,255,.28); --aurora2:rgba(255,95,15,.20); --aurora3:rgba(25,184,255,.16);
+  --grid:rgba(120,150,255,.07); --shadow:0 40px 90px -30px rgba(0,0,0,.8); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#040714; --bg2:#070c22; --surface:rgba(16,26,66,.55); --surface-solid:#0c1534;
+  --line:rgba(140,165,255,.14); --line-strong:rgba(140,165,255,.26);
+  --fg:#eef2ff; --muted:#a3afd6; --soft:#7684b3;
+  --navy:#c9d5ff; --blue:#4f86ff; --cyan:#38c6ff;
+  --aurora1:rgba(47,107,255,.28); --aurora2:rgba(255,95,15,.20); --aurora3:rgba(25,184,255,.16);
+  --grid:rgba(120,150,255,.07); --shadow:0 40px 90px -30px rgba(0,0,0,.8); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--body);overflow-x:hidden;transition:background .5s,color .5s}
+body.ta{font-family:var(--tamil),var(--body)}
+body.ta h1,body.ta h2,body.ta h3{font-family:var(--tamil),var(--display);font-weight:700;line-height:1.25}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1220px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+h1,h2,h3{font-family:var(--display);line-height:1.06;text-wrap:balance;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(1.8rem,4vw,3.1rem);font-weight:800}
+h3{font-size:1.06rem;font-weight:600}
+p{margin:0}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+svg.i{width:20px;height:20px;flex:none}
+.grad{background:linear-gradient(100deg,var(--amber) 10%,var(--orange) 60%,#ff3d6e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font:500 .74rem var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--orange);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--amber))}
+.lead{color:var(--muted);font-size:1.08rem;max-width:60ch}
+
+/* ambient background */
+.aurora{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;background:var(--bg)}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:60vw;height:60vw;left:-15vw;top:-20vw;background:var(--aurora1)}
+.aurora i:nth-child(2){width:50vw;height:50vw;right:-15vw;top:30vh;background:var(--aurora2);animation-delay:-8s}
+.aurora i:nth-child(3){width:45vw;height:45vw;left:20vw;bottom:-25vw;background:var(--aurora3);animation-delay:-14s}
+.aurora::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%)}
+@keyframes drift{to{transform:translate(6vw,4vh) scale(1.12)}}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:14px;font:700 1rem var(--body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s,background .25s;white-space:nowrap}
+body.ta .btn{font-family:var(--tamil),var(--body)}
+.btn-primary{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent);box-shadow:0 14px 34px -12px rgba(255,95,15,.75),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary:hover{box-shadow:0 20px 44px -12px rgba(255,95,15,.9),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);background-size:250% 100%;background-position:120% 0;transition:background-position .8s}
+.btn-primary:hover::after{background-position:-40% 0}
+.btn-glass{background:var(--surface);border-color:var(--line-strong);color:var(--fg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn-glass:hover{border-color:var(--orange)}
+.btn-sm{padding:10px 16px;font-size:.9rem;border-radius:12px}
+
+/* progress + nav */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--amber),var(--orange),#ff3d6e);z-index:100}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;transition:background .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
+header.nav.scrolled{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
+.brand img{width:46px;height:42px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(255,95,15,.35))}
+.brand b{font:800 .98rem var(--display);letter-spacing:.03em;line-height:1.1;display:block}
+.brand small{display:block;font:500 .6rem var(--mono);color:var(--soft);letter-spacing:.16em}
+.links{display:flex;gap:4px;list-style:none;margin:0;padding:4px;border-radius:999px;background:var(--surface);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.links a{display:block;text-decoration:none;color:var(--muted);font-weight:600;font-size:.9rem;padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
+.links a:hover,.links a.on{color:var(--fg);background:var(--surface-solid)}
+.toggles{display:flex;gap:8px}
+.tg{height:42px;min-width:42px;padding:0 12px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--fg);cursor:pointer;font:700 .8rem var(--mono);display:grid;place-items:center;backdrop-filter:blur(10px);transition:border-color .2s,transform .2s}
+.tg:hover{border-color:var(--orange)}
+.tg svg{width:18px;height:18px}
+.tg .sun{display:none}
+:root[data-theme="dark"] .tg .sun{display:block}:root[data-theme="dark"] .tg .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tg .sun{display:block}:root:not([data-theme="light"]) .tg .moon{display:none}}
+.menu-btn{display:none}
+@media (max-width:1020px){.links{display:none}.menu-btn{display:grid}}
+@media (max-width:520px){.nav .call-txt{display:none}.brand small{display:none}}
+.drawer{position:fixed;inset:0;z-index:90;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:80px var(--gr) 40px var(--gl)}
+.drawer a{font:800 clamp(1.6rem,7vw,2.4rem) var(--display);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--line)}
+body.ta .drawer a{font-family:var(--tamil)}
+.drawer .x{position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);right:var(--gr)}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;animation:loaderOut .6s ease 2.4s forwards}
+#loader img{width:120px;animation:pulse 1.2s ease-in-out infinite}
+#loader .bar{width:160px;height:3px;border-radius:3px;background:var(--line);margin-top:22px;overflow:hidden}
+#loader .bar i{display:block;height:100%;width:40%;background:linear-gradient(90deg,var(--amber),var(--orange));animation:load 1s ease-in-out infinite}
+#loader.done{animation:loaderOut .5s ease forwards}
+@keyframes loaderOut{to{opacity:0;visibility:hidden}}
+@keyframes pulse{50%{transform:scale(1.08) rotate(-4deg)}}
+@keyframes load{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
+
+/* hero */
+.hero{position:relative;padding-block:28px 40px}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:20px}
+.hero h1{font-size:clamp(2.4rem,6.2vw,5.1rem);font-weight:800}
+body.ta .hero h1{font-size:clamp(2rem,4.6vw,3.6rem)}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .line>span{display:inline-block}
+.hero-copy{display:flex;flex-direction:column;gap:24px;min-width:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.live{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);backdrop-filter:blur(10px);font-weight:600;font-size:.86rem;width:max-content;max-width:100%}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:ping 2s infinite;flex:none}
+.dot.closed{background:var(--bad);animation:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 70%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
+.trust{display:flex;flex-wrap:wrap;gap:14px}
+.trust a{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;border:1px solid var(--line);background:var(--surface);backdrop-filter:blur(10px);text-decoration:none;transition:border-color .2s,transform .2s}
+.trust a:hover{border-color:var(--amber);transform:translateY(-2px)}
+.trust b{font:800 1.25rem var(--display);font-variant-numeric:tabular-nums}
+.trust .st{color:var(--amber);letter-spacing:1px;font-size:.85rem;line-height:1}
+.trust small{display:block;font:500 .68rem var(--mono);color:var(--soft);letter-spacing:.08em;text-transform:uppercase}
+.stage{position:relative;aspect-ratio:1/1;width:100%;max-width:640px;justify-self:end;min-width:0}
+#three{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.stage .fb{position:absolute;inset:14%;display:grid;place-items:center}
+.stage .fb img{width:80%;filter:drop-shadow(0 30px 60px rgba(255,95,15,.45));animation:bob 6s ease-in-out infinite}
+.stage.gl .fb{display:none}
+.float-card{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--line-strong);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-weight:700;font-size:.84rem;box-shadow:var(--shadow);animation:bob 7s ease-in-out infinite;white-space:nowrap}
+.float-card .fi{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+.float-card .fi svg{width:16px;height:16px}
+.float-card small{display:block;font:500 .64rem var(--mono);color:var(--soft);letter-spacing:.06em;text-transform:uppercase}
+.fc1{top:8%;left:0}.fc2{top:46%;right:-2%;animation-delay:-2.5s}.fc3{bottom:6%;left:8%;animation-delay:-5s}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.scroll-hint{display:flex;align-items:center;gap:10px;color:var(--soft);font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+.mouse{width:20px;height:32px;border:2px solid var(--line-strong);border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;border-radius:3px;background:var(--orange);transform:translateX(-50%);animation:wheel 1.6s infinite}
+@keyframes wheel{to{transform:translate(-50%,10px);opacity:0}}
+@media (max-width:940px){.hero-grid{grid-template-columns:1fr}.stage{justify-self:center;max-width:520px}.fc2{right:0}}
+
+/* marquee */
+.marquee{position:relative;padding-block:26px;border-block:1px solid var(--line);background:var(--surface);backdrop-filter:blur(10px);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq{display:flex;gap:72px;width:max-content;animation:mq 34s linear infinite}
+.marquee:hover .mq{animation-play-state:paused}
+.mq span{font:800 1.5rem var(--display);letter-spacing:.06em;color:var(--soft);white-space:nowrap;transition:color .3s}
+.mq span:hover{color:var(--orange)}
+.mq span.sep{color:var(--orange);font-size:1rem;align-self:center}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:110px;position:relative}
+.head{display:flex;flex-direction:column;gap:16px;margin-bottom:52px;max-width:780px}
+.head.center{margin-inline:auto;text-align:center;align-items:center}
+.glass{background:var(--surface);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:22px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-30px}
+@media (max-width:820px){.stats{grid-template-columns:1fr 1fr}}
+.stat{padding:24px;display:flex;flex-direction:column;gap:4px}
+.stat b{font:800 clamp(1.8rem,3.4vw,2.6rem) var(--display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.9rem;font-weight:600}
+
+/* bento services */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.svc{position:relative;overflow:hidden;padding:30px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s;transform-style:preserve-3d}
+.svc::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--orange) 16%,transparent),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.svc:hover::before{opacity:1}
+.svc:hover{border-color:color-mix(in srgb,var(--orange) 45%,transparent)}
+.svc.w3{grid-column:span 3}.svc.w2{grid-column:span 2}.svc.w4{grid-column:span 4}
+@media (max-width:980px){.svc.w2,.svc.w4,.svc.w3{grid-column:span 3}}
+@media (max-width:620px){.bento{grid-template-columns:1fr}.svc.w2,.svc.w3,.svc.w4{grid-column:1/-1}}
+.ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:var(--on-accent);background:linear-gradient(135deg,var(--amber),var(--orange));box-shadow:0 12px 26px -10px rgba(255,95,15,.7);transform:translateZ(30px)}
+.ic svg{width:26px;height:26px}
+.svc p{color:var(--muted);font-size:.96rem}
+.svc .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.tag{font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:8px;border:1px solid var(--line-strong);color:var(--muted)}
+.svc.feature{background:linear-gradient(150deg,color-mix(in srgb,var(--blue) 22%,var(--surface-solid)),var(--surface-solid) 70%)}
+.svc.feature .big{font:800 clamp(1.4rem,2.4vw,1.9rem) var(--display);line-height:1.15}
+body.ta .svc.feature .big{font-family:var(--tamil)}
+.chipviz{position:absolute;right:-30px;bottom:-30px;width:220px;opacity:.5;pointer-events:none}
+@media (max-width:620px){.chipviz{display:none}}
+
+/* products */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.tab{padding:10px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);font:700 .9rem var(--body);cursor:pointer;transition:all .25s}
+body.ta .tab{font-family:var(--tamil)}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.prod-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.prod-grid{grid-template-columns:1fr}}
+.prod{overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s;min-width:0}
+.prod.hide{display:none}
+.prod .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe8f8}
+.prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.prod:hover .ph img{transform:scale(1.08)}
+.prod .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(4,7,20,.55))}
+.prod .badge{position:absolute;z-index:1;left:14px;bottom:14px;font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:6px 10px;border-radius:8px;background:rgba(4,7,20,.6);backdrop-filter:blur(6px)}
+.prod .bd{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.prod .bd p{color:var(--muted);font-size:.95rem}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills span{font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--blue) 10%,transparent);color:var(--fg)}
+.prod .ask{margin-top:auto;padding-top:8px;display:inline-flex;gap:8px;align-items:center;font-weight:800;color:var(--orange);text-decoration:none;background:none;border:0;cursor:pointer;font-family:inherit;font-size:.95rem;padding-left:0}
+.prod .ask:hover svg{transform:translateX(4px)}
+.prod .ask svg{transition:transform .2s}
+
+/* fix finder */
+.fixer{display:grid;grid-template-columns:1fr 1.1fr;gap:18px;align-items:stretch}
+@media (max-width:900px){.fixer{grid-template-columns:1fr}}
+.sym-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;align-content:start}
+@media (max-width:440px){.sym-list{grid-template-columns:1fr}}
+.sym{display:flex;align-items:center;gap:12px;text-align:left;padding:16px;border-radius:16px;border:1px solid var(--line);background:transparent;color:var(--fg);font:700 .95rem var(--body);cursor:pointer;transition:all .25s;min-width:0}
+body.ta .sym{font-family:var(--tamil)}
+.sym .si{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--blue) 14%,transparent);color:var(--blue);flex:none;transition:all .25s}
+.sym .si svg{width:20px;height:20px}
+.sym:hover{border-color:var(--line-strong);background:var(--surface)}
+.sym[aria-pressed="true"]{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 9%,transparent)}
+.sym[aria-pressed="true"] .si{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+.result{padding:32px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;min-width:0}
+.result .num{font:500 .72rem var(--mono);color:var(--soft);letter-spacing:.14em;text-transform:uppercase}
+.result h3{font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:800}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
+.checks li svg{color:var(--ok);margin-top:3px}
+.result .scan{position:absolute;left:0;right:0;height:120px;top:-120px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--orange) 14%,transparent),transparent);pointer-events:none}
+.result.scanning .scan{animation:scan .9s ease}
+@keyframes scan{to{top:100%}}
+
+/* process */
+.timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.timeline .rail{position:absolute;left:0;right:0;top:34px;height:2px;background:var(--line)}
+.timeline .rail i{display:block;height:100%;width:100%;transform-origin:0 50%;background:linear-gradient(90deg,var(--amber),var(--orange))}
+@media (max-width:900px){.timeline{grid-template-columns:1fr 1fr}.timeline .rail{display:none}}
+@media (max-width:520px){.timeline{grid-template-columns:1fr}}
+.step{position:relative;display:flex;flex-direction:column;gap:12px;padding-top:6px}
+.step .n{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font:800 1.1rem var(--display);background:var(--surface-solid);border:2px solid var(--orange);color:var(--orange);position:relative;z-index:1;box-shadow:0 0 0 8px var(--bg)}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* owner */
+.owner{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+@media (max-width:900px){.owner{grid-template-columns:1fr;gap:56px}}
+.portrait{position:relative;max-width:420px;width:100%;justify-self:center;perspective:1000px}
+.portrait .halo{position:absolute;inset:6% -6% -4% 6%;border-radius:32px;background:conic-gradient(from 200deg,var(--amber),var(--orange),#ff3d6e,var(--blue),var(--amber));filter:blur(2px);opacity:.9;animation:spin 14s linear infinite}
+@keyframes spin{to{filter:blur(2px) hue-rotate(40deg)}}
+.portrait .frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);transform:rotateY(-10deg) rotateX(4deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow);background:#dbe3f2}
+.portrait:hover .frame{transform:rotateY(0) rotateX(0)}
+.portrait .frame img{width:100%;aspect-ratio:600/765;object-fit:cover}
+.nameplate{position:absolute;left:-18px;bottom:28px;right:28px;padding:16px 18px;border-radius:18px;background:var(--surface);border:1px solid var(--line-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);transform:translateZ(60px)}
+.nameplate img{width:46px;flex:none}
+.nameplate b{font:800 1.3rem var(--display);display:block;line-height:1.1}
+.nameplate span{font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+body.ta .nameplate span{font-family:var(--tamil);letter-spacing:0;text-transform:none;font-size:.85rem}
+.owner-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.quote{font:600 clamp(1.15rem,2vw,1.45rem)/1.45 var(--body);border-left:3px solid var(--orange);padding-left:20px}
+body.ta .quote{font-family:var(--tamil)}
+.quote small{display:block;margin-top:10px;font:500 .74rem var(--mono);color:var(--soft);letter-spacing:.1em;text-transform:uppercase}
+
+/* reviews band */
+.ratings{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px}
+@media (max-width:860px){.ratings{grid-template-columns:1fr}}
+.rate{padding:28px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .3s,border-color .3s;min-width:0}
+.rate:hover{transform:translateY(-4px);border-color:var(--amber)}
+.rate .score{display:flex;align-items:baseline;gap:12px}
+.rate .score b{font:800 3.4rem var(--display);line-height:1;font-variant-numeric:tabular-nums}
+.rate .stars{color:var(--amber);font-size:1.2rem;letter-spacing:3px}
+.rate p{color:var(--muted)}
+.rate .src{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.rate.hero-rate{background:linear-gradient(140deg,color-mix(in srgb,var(--amber) 22%,var(--surface-solid)),var(--surface-solid) 70%)}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+@media (max-width:940px){.visit-grid{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
+.gallery figure{margin:0;position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(4,7,20,.65);padding:6px 10px;border-radius:8px;backdrop-filter:blur(6px)}
+.mapcard{grid-column:1/-1;position:relative;display:block;border-radius:20px;overflow:hidden;aspect-ratio:16/8;border:1px solid var(--line)}
+.mapcard img{width:100%;height:100%;object-fit:cover}
+:root[data-theme="dark"] .mapcard img{filter:invert(.9) hue-rotate(185deg) saturate(.7) brightness(.95)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mapcard img{filter:invert(.9) hue-rotate(185deg) saturate(.7) brightness(.95)}}
+.mapcard .pinpulse{position:absolute;left:33.5%;top:58%;width:22px;height:22px;border-radius:50%;background:var(--orange);transform:translate(-50%,-50%);box-shadow:0 0 0 0 rgba(255,95,15,.6);animation:pin 1.8s infinite}
+@keyframes pin{100%{box-shadow:0 0 0 26px rgba(255,95,15,0)}}
+.mapcard .btn{position:absolute;right:14px;bottom:14px}
+.gallery .sq{aspect-ratio:1/1}
+.info{display:flex;flex-direction:column;gap:12px;min-width:0}
+.row{display:flex;gap:14px;align-items:flex-start;padding:18px 20px}
+.row .ri{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--orange) 12%,transparent);color:var(--orange);flex:none}
+.row .lbl{font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.row .v{font-weight:700;overflow-wrap:anywhere}
+.row .v a{text-decoration:none}.row .v a:hover{color:var(--orange)}
+.row .sub{color:var(--muted);font-size:.86rem;font-weight:500}
+.copy{margin-left:auto;align-self:center;background:transparent;border:1px solid var(--line-strong);color:var(--muted);border-radius:10px;padding:7px 11px;font:500 .72rem var(--mono);cursor:pointer;flex:none;transition:all .2s}
+.copy:hover{color:var(--fg);border-color:var(--orange)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
+.week span{text-align:center;font:500 .66rem var(--mono);padding:5px 0;border-radius:6px;background:color-mix(in srgb,var(--blue) 8%,transparent);color:var(--muted)}
+.week span.today{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq details{padding:0;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:22px 24px;font-weight:700;font-size:1.04rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.6rem var(--display);color:var(--orange);transition:transform .3s;flex:none;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;color:var(--muted)}
+
+/* booking */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+@media (max-width:900px){.book{grid-template-columns:1fr;gap:36px}}
+.book-side{display:flex;flex-direction:column;gap:22px;min-width:0}
+.quick{display:flex;flex-direction:column;gap:12px}
+.quick a{display:flex;align-items:center;gap:14px;padding:16px 18px;text-decoration:none;transition:transform .25s,border-color .25s}
+.quick a:hover{transform:translateX(6px);border-color:var(--orange)}
+.quick .qi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;color:#fff}
+.quick b{display:block}.quick small{color:var(--muted)}
+form{padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
+@media (max-width:540px){form{grid-template-columns:1fr;padding:20px}}
+.f{display:flex;flex-direction:column;gap:7px;min-width:0}
+.f.full{grid-column:1/-1}
+label{font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+body.ta label{font-family:var(--tamil);letter-spacing:0;text-transform:none;font-size:.85rem}
+input,select,textarea{font:inherit;font-weight:600;color:var(--fg);background:var(--surface-solid);border:1px solid var(--line-strong);border-radius:12px;padding:13px 15px;width:100%;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px color-mix(in srgb,var(--orange) 18%,transparent)}
+textarea{resize:vertical;min-height:110px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;border-radius:14px;background:var(--surface-solid);border:1px solid var(--line-strong)}
+.seg button{padding:10px;border-radius:10px;border:0;background:transparent;color:var(--muted);font:700 .9rem var(--body);cursor:pointer}
+body.ta .seg button{font-family:var(--tamil)}
+.seg button[aria-pressed="true"]{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+.err{grid-column:1/-1;color:var(--bad);font-weight:600;font-size:.9rem}
+.out{grid-column:1/-1;display:flex;flex-direction:column;gap:12px}
+.out .msg{font:500 .86rem/1.6 var(--mono);color:var(--muted);background:var(--surface-solid);border:1px dashed var(--line-strong);border-radius:12px;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* footer */
+footer{padding-block:64px 120px;border-top:1px solid var(--line);margin-top:40px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+@media (max-width:780px){.foot{grid-template-columns:1fr}}
+.foot h4{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 12px}
+.foot a{display:block;text-decoration:none;color:var(--muted);padding:3px 0;font-weight:600}
+.foot a:hover{color:var(--orange)}
+.foot p{color:var(--muted);font-size:.9rem}
+.bigname{font:800 clamp(2.4rem,11vw,9rem) var(--display);letter-spacing:-.04em;line-height:.9;margin-top:56px;background:linear-gradient(180deg,var(--line-strong),transparent);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;white-space:nowrap;overflow:hidden}
+
+/* floating actions */
+.fab{position:fixed;right:calc(env(safe-area-inset-right,0px) + 18px);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:70;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.fab a,.fab button{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;border:0;cursor:pointer;box-shadow:0 14px 34px -10px rgba(0,0,0,.5);transition:transform .25s}
+.fab a:hover,.fab button:hover{transform:scale(1.1)}
+.fab .wa{background:#25d366;color:#05250f}
+.fab .call{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+.fab .top{width:46px;height:46px;background:var(--surface-solid);color:var(--fg);border:1px solid var(--line-strong)}
+.fab svg{width:26px;height:26px}
+.fab .top svg{width:20px;height:20px}
+.fab .wa::before{content:"";position:absolute;width:58px;height:58px;border-radius:50%;border:2px solid #25d366;animation:ring 2.4s infinite}
+@keyframes ring{from{transform:scale(1);opacity:.8}to{transform:scale(1.5);opacity:0}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);transform:translate(-50%,140%);z-index:120;padding:12px 18px;border-radius:12px;background:var(--fg);color:var(--bg);font-weight:700;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.toast.show{transform:translate(-50%,0)}
+
+.up{will-change:transform}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}#loader{display:none}}
+
+/* gallery */
+.gal-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:24px}
+.gal-tabs{display:flex;gap:6px;padding:5px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.gal-tab{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:12px;border:0;background:transparent;color:var(--muted);font:700 .92rem var(--body);cursor:pointer;transition:all .25s}
+body.ta .gal-tab{font-family:var(--tamil)}
+.gal-tab .ct{font:500 .72rem var(--mono);padding:2px 7px;border-radius:999px;background:var(--line)}
+.gal-tab[aria-selected="true"]{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)}
+.gal-tab[aria-selected="true"] .ct{background:rgba(0,0,0,.14)}
+.gal-src{display:inline-flex;align-items:center;gap:8px;font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);text-decoration:none}
+.gal-src:hover{color:var(--orange)}
+.gal-grid{columns:4 230px;column-gap:14px}
+.gal-grid.vids{columns:3 280px}
+.gi{position:relative;display:block;width:100%;margin:0 0 14px;break-inside:avoid;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--surface-solid);cursor:zoom-in;padding:0;text-align:left;color:#fff}
+.gi img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .3s;min-height:120px;background:linear-gradient(110deg,var(--bg2) 30%,var(--surface-solid) 50%,var(--bg2) 70%);background-size:300% 100%;animation:shimmer 1.4s linear infinite}
+.gi:hover img{transform:scale(1.05)}
+.gi .cap{position:absolute;inset:auto 0 0 0;padding:28px 12px 10px;background:linear-gradient(180deg,transparent,rgba(4,7,20,.78));font:600 .8rem var(--body);opacity:0;transform:translateY(8px);transition:all .3s}
+.gi:hover .cap,.gi:focus-visible .cap{opacity:1;transform:none}
+.gi.vid{cursor:pointer}
+.gi.vid img{aspect-ratio:16/9;object-fit:cover}
+.gi.vid .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent);box-shadow:0 10px 30px -6px rgba(255,95,15,.8);transition:transform .3s}
+.gi.vid:hover .play{transform:scale(1.12)}
+.gi.vid .play svg{width:26px;height:26px;margin-left:4px}
+.gi.vid .cap{opacity:1;transform:none}
+.sk{height:220px;border-radius:16px;margin:0 0 14px;break-inside:avoid;background:linear-gradient(110deg,var(--bg2) 30%,var(--surface-solid) 50%,var(--bg2) 70%);background-size:300% 100%;animation:shimmer 1.4s linear infinite;border:1px solid var(--line)}
+.sk:nth-child(3n){height:300px}.sk:nth-child(4n){height:170px}
+@keyframes shimmer{to{background-position:-300% 0}}
+.gal-more{display:flex;justify-content:center;margin-top:18px}
+.gal-empty{padding:40px 28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+@media (max-width:640px){.gal-empty{grid-template-columns:1fr;text-align:left}}
+.gal-empty .art{width:120px;height:120px;border-radius:28px;display:grid;place-items:center;background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent);box-shadow:0 20px 40px -14px rgba(255,95,15,.7);transform:rotate(-6deg)}
+.gal-empty .art svg{width:56px;height:56px}
+.gal-empty h3{font-size:1.3rem;margin-bottom:8px}
+.gal-empty p{color:var(--muted);max-width:56ch}
+.gal-empty .cta-row{margin-top:16px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:150;background:rgba(3,5,14,.94);backdrop-filter:blur(10px);display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 14px) max(14px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 14px) max(14px,env(safe-area-inset-left,0px));color:#fff}
+.lb-top{display:flex;align-items:center;gap:12px}
+.lb-top .t{flex:1;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-top .n{font:500 .78rem var(--mono);color:#aab4d8}
+.lb button{width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb button:hover{border-color:var(--amber)}
+.lb button svg{width:22px;height:22px}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:12px;min-height:0;padding-block:14px}
+.lb-media{flex:1;height:100%;display:flex;align-items:center;justify-content:center;min-width:0}
+.lb-media img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px}
+.lb-media iframe{width:min(100%,1100px);aspect-ratio:16/9;max-height:100%;border:0;border-radius:12px;background:#000}
+.lb-media .lb-alt{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#aab4d8}
+@media (max-width:640px){.lb-stage .nav-b{display:none}}
+</style>
+<style>[hidden]{display:none!important}body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v6l4 2"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="m22 6-10 7L2 6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></g></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M6 11l6-6 6 6"/></symbol>
+</svg>
+
+<div id="loader" aria-hidden="true"><div style="display:flex;flex-direction:column;align-items:center"><img src="img/mark.png" alt=""><div class="bar"><i></i></div></div></div>
+<div id="progress"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/mark.png" alt="Dharshik Computers logo"><span><b>DHARSHIK COMPUTERS</b><small>VILLUPURAM · SALES &amp; SERVICE</small></span></a>
+    <ul class="links" id="links">
+      <li><a href="#services" data-ta="சேவைகள்">Services</a></li>
+      <li><a href="#products" data-ta="பொருட்கள்">Products</a></li>
+      <li><a href="#gallery" data-ta="கேலரி">Gallery</a></li>
+      <li><a href="#fix" data-ta="பிரச்சனை தீர்வு">Fix finder</a></li>
+      <li><a href="#about" data-ta="எங்களைப் பற்றி">About</a></li>
+      <li><a href="#visit" data-ta="முகவரி">Visit</a></li>
+    </ul>
+    <div class="toggles">
+      <button class="tg" id="langBtn" type="button" aria-label="Switch language">தமிழ்</button>
+      <button class="tg" id="themeBtn" type="button" aria-label="Switch light or dark theme"><svg class="moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
+      <button class="tg menu-btn" id="menuBtn" type="button" aria-label="Open menu"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    </div>
+    <a class="btn btn-primary btn-sm" href="tel:+917339270235"><svg class="i"><use href="#i-phone"/></svg><span class="call-txt">73392 70235</span></a>
+  </div>
+</header>
+<nav class="drawer" id="drawer" hidden>
+  <button class="tg x" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+  <a href="#services" data-ta="சேவைகள்">Services</a>
+  <a href="#products" data-ta="பொருட்கள்">Products</a>
+  <a href="#gallery" data-ta="கேலரி">Gallery</a>
+  <a href="#fix" data-ta="பிரச்சனை தீர்வு">Fix finder</a>
+  <a href="#about" data-ta="எங்களைப் பற்றி">About</a>
+  <a href="#visit" data-ta="முகவரி">Visit</a>
+  <a href="#book" data-ta="பதிவு செய்ய">Book a repair</a>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" style="padding-top:28px">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="live"><span class="dot" id="liveDot"></span><span id="liveTxt">Open today · 10 AM – 10 PM</span></span>
+      <h1 id="heroTitle">
+        <span class="line"><span data-ta="உங்கள் கணினி,">Your computer,</span></span>
+        <span class="line"><span data-ta="சரியாக சரிசெய்யப்படும்">fixed right.</span></span>
+        <span class="line"><span class="grad" data-ta="உங்கள் வீட்டு வாசலில்.">At your doorstep.</span></span>
+      </h1>
+      <p class="lead" data-ta="அனைத்து முன்னணி பிராண்டுகளுக்கும் விற்பனை, சர்வீஸ், சிப்-லெவல் மதர்போர்டு ரிப்பேர் மற்றும் மென்பொருள் நிறுவல். விழுப்புரம் புதிய பேருந்து நிலையம் எதிரே உள்ள எங்கள் கடைக்கு வாருங்கள் — அல்லது அழையுங்கள், நாங்கள் உங்களிடம் வருகிறோம்.">Sales, service, chip-level motherboard repair and software installation for every major brand. Visit us opposite the New Bus Stand in Villupuram, or call and we'll come to you.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary mag" href="#book"><span data-ta="ரிப்பேர் பதிவு செய்ய">Book a repair</span><svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-glass mag" href="https://wa.me/917339270235?text=Hi%20Dharshik%20Computers%2C%20I%20need%20help%20with%20my%20computer." target="_blank" rel="noopener"><svg class="i" style="color:#25d366"><use href="#i-wa"/></svg><span data-ta="வாட்ஸ்அப் செய்ய">WhatsApp us</span></a>
+      </div>
+      <div class="trust">
+        <a href="https://share.google/EWj76My7JCH4qEhse" target="_blank" rel="noopener"><div><b>5.0</b> <span class="st">★★★★★</span><small data-ta="21 கூகுள் விமர்சனங்கள்">21 Google reviews</small></div></a>
+        <a href="https://www.justdial.com/Villupuram/Dharshik-computers-Mandhakarai/9999P4146-4146-221011110121-B5C3_BZDET" target="_blank" rel="noopener"><div><b>5.0</b> <span class="st">★★★★★</span><small data-ta="ஜஸ்ட்டயல் மதிப்பீடு">Rated on Justdial</small></div></a>
+      </div>
+      <div class="scroll-hint"><span class="mouse"></span><span data-ta="கீழே உருட்டவும்">Scroll to explore</span></div>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="three" aria-label="Animated 3D laptop with the Dharshik Computers logo"></canvas>
+      <div class="fb"><img src="img/mark.png" alt=""></div>
+      <div class="float-card fc1"><span class="fi"><svg><use href="#i-chip"/></svg></span><span><small data-ta="நிபுணத்துவம்">Speciality</small><span data-ta="சிப்-லெவல் ரிப்பேர்">Chip-level repair</span></span></div>
+      <div class="float-card fc2"><span class="fi"><svg><use href="#i-home"/></svg></span><span><small data-ta="விழுப்புரம் முழுவதும்">Around Villupuram</small><span data-ta="வீட்டு வாசல் சேவை">Doorstep service</span></span></div>
+      <div class="float-card fc3"><span class="fi"><svg><use href="#i-star"/></svg></span><span><small data-ta="கூகுள் மதிப்பீடு">Google rating</small>5.0 · ★★★★★</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Brands we sell and service">
+  <div class="mq" id="mq"><span>DELL</span><span class="sep">◆</span><span>HP</span><span class="sep">◆</span><span>LENOVO</span><span class="sep">◆</span><span>ACER</span><span class="sep">◆</span><span>ASUS</span><span class="sep">◆</span><span>SAMSUNG</span><span class="sep">◆</span><span>LG</span><span class="sep">◆</span><span>HCL</span><span class="sep">◆</span></div>
+</div>
+
+<!-- STATS -->
+<div class="wrap" style="position:relative;z-index:2;margin-top:70px">
+  <div class="stats">
+    <div class="stat glass up"><b><span class="count" data-to="5.0" data-dec="1">5.0</span>★</b><span data-ta="கூகுள் மதிப்பீடு">Google rating</span></div>
+    <div class="stat glass up"><b><span class="count" data-to="21">21</span></b><span data-ta="கூகுள் விமர்சனங்கள்">Google reviews</span></div>
+    <div class="stat glass up"><b><span class="count" data-to="8">8</span>+</b><span data-ta="பிராண்டுகள் சர்வீஸ்">Brands serviced</span></div>
+    <div class="stat glass up"><b><span class="count" data-to="12">12</span> hrs</b><span data-ta="தினமும் திறந்திருக்கும்">Open every day</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="நாங்கள் செய்வது">What we do</span>
+      <h2 data-ta="உங்கள் கணினிக்குத் தேவையான அனைத்தும், <span class='grad'>ஒரே இடத்தில்.</span>">Everything your computer needs, <span class="grad">under one roof.</span></h2>
+      <p class="lead" data-ta="மெதுவான லேப்டாப் முதல் இயங்காத மதர்போர்டு வரை, உண்மையான பிரச்சனையைக் கண்டறிந்து, தேவையில்லாத பாகங்களை மாற்றாமல் கூறு அளவில் சரிசெய்கிறோம்.">From a slow laptop to a dead motherboard, we find the real fault and repair it at component level instead of replacing parts you don't need.</p>
+    </div>
+    <div class="bento">
+      <article class="svc glass feature w4 up spot">
+        <div class="ic"><svg><use href="#i-chip"/></svg></div>
+        <h3 data-ta="மதர்போர்டு & சிப்-லெவல் ரிப்பேர்">Motherboard &amp; chip-level repair</h3>
+        <p class="big" data-ta="பவர் இல்லை, டிஸ்ப்ளே இல்லை, தண்ணீர் சேதம் — புதிய போர்டு வாங்க வேண்டியதில்லை.">No power, no display, liquid damage. Fixed at the board, so you don't pay for a new one.</p>
+        <p data-ta="ஒவ்வொரு பவர் ரெயில், IC மற்றும் சர்க்யூட்டையும் சோதித்து, பழுதான கூறை மட்டும் மாற்றுகிறோம்.">We trace each power rail, IC and circuit, then replace only the component that failed.</p>
+        <div class="tags"><span class="tag">Laptop boards</span><span class="tag">Desktop boards</span><span class="tag">Liquid damage</span></div>
+        <svg class="chipviz" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="var(--orange)" stroke-width="1.5"><rect x="60" y="60" width="80" height="80" rx="8"/><rect x="82" y="82" width="36" height="36" rx="3"/><path d="M75 60V20M100 60V10M125 60V20M75 140v40M100 140v50M125 140v40M60 75H20M60 100H10M60 125H20M140 75h40M140 100h50M140 125h40"/></g><g fill="var(--amber)"><circle cx="75" cy="20" r="4"/><circle cx="100" cy="10" r="4"/><circle cx="190" cy="100" r="4"/><circle cx="20" cy="125" r="4"/><circle cx="125" cy="180" r="4"/></g></svg>
+      </article>
+      <article class="svc glass w2 up spot">
+        <div class="ic"><svg><use href="#i-home"/></svg></div>
+        <h3 data-ta="வீட்டு வாசல் சேவை">Doorstep service</h3>
+        <p data-ta="கணினியைக் கொண்டு வர முடியவில்லையா? அழையுங்கள் — விழுப்புரம் மற்றும் சுற்றுப்புறங்களில் உங்கள் வீடு அல்லது அலுவலகத்திற்கு டெக்னீஷியன் வருவார்.">Can't bring it in? Call us and a technician comes to your home or office in and around Villupuram.</p>
+        <div class="tags"><span class="tag">Home</span><span class="tag">Office</span></div>
+      </article>
+      <article class="svc glass w2 up spot">
+        <div class="ic"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></g></svg></div>
+        <h3 data-ta="விற்பனை & சர்வீஸ்">Sales &amp; service</h3>
+        <p data-ta="முன்னணி பிராண்டுகளின் புதிய லேப்டாப், டெஸ்க்டாப் — நீங்கள் வைத்திருக்கும் கணினிகளுக்கு சர்வீஸ்.">New laptops and desktops from leading brands, and servicing for the machines you already own.</p>
+        <div class="tags"><span class="tag">Laptops</span><span class="tag">Desktops</span></div>
+      </article>
+      <article class="svc glass w2 up spot">
+        <div class="ic"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></g></svg></div>
+        <h3 data-ta="மென்பொருள் நிறுவல்">Software installation</h3>
+        <p data-ta="விண்டோஸ் நிறுவல் & அப்கிரேட், டிரைவர்கள், ஆபீஸ் மற்றும் ஆன்டிவைரஸ் அமைப்பு.">Windows installs and upgrades, drivers, office tools and antivirus setup.</p>
+        <div class="tags"><span class="tag">Windows</span><span class="tag">Drivers</span></div>
+      </article>
+      <article class="svc glass w2 up spot">
+        <div class="ic"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="1"/><path d="M6 11h2M10 11h2M14 11h4"/></g></svg></div>
+        <h3 data-ta="அப்கிரேட் & உதிரிபாகங்கள்">Upgrades &amp; parts</h3>
+        <p data-ta="SSD, RAM, ஹார்ட் டிஸ்க், கீபோர்டு, பேட்டரி, அடாப்டர், ஸ்கிரீன் மாற்றம்.">SSD, RAM, hard disk, keyboard, battery, adapter and screen replacement.</p>
+        <div class="tags"><span class="tag">SSD</span><span class="tag">RAM</span><span class="tag">Screens</span></div>
+      </article>
+      <article class="svc glass w2 up spot">
+        <div class="ic"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="19.5" r="1"/></g></svg></div>
+        <h3 data-ta="ஆக்சஸரீஸ் & நெட்வொர்க்">Accessories &amp; networking</h3>
+        <p data-ta="ஸ்பீக்கர், மவுஸ், கீபோர்டு, கேபிள்கள், Wi-Fi அடாப்டர்கள் மற்றும் அமைப்பு உதவி.">Speakers, mouse, keyboards, cables, Wi-Fi adapters, plus setup help.</p>
+        <div class="tags"><span class="tag">Peripherals</span><span class="tag">Wi-Fi</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="கடையில் கிடைக்கும்">In store</span>
+      <h2 data-ta="வாங்கிச் செல்ல தயாரான கணினிகள் & பாகங்கள்.">Machines and parts, ready to take home.</h2>
+      <p class="lead" data-ta="ஸ்டாக் ஒவ்வொரு வாரமும் மாறும். உங்கள் பட்ஜெட்டையும் பயன்பாட்டையும் சொல்லுங்கள் — சரியான மாடலைப் பரிந்துரைக்கிறோம்.">Stock changes every week. Tell us your budget and how you'll use it, and we'll suggest the right model.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Product categories">
+      <button class="tab" role="tab" aria-selected="true" data-f="all" data-ta="அனைத்தும்">All</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="laptop" data-ta="லேப்டாப்">Laptops</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="desktop" data-ta="டெஸ்க்டாப்">Desktops</button>
+      <button class="tab" role="tab" aria-selected="false" data-f="parts" data-ta="பாகங்கள்">Parts &amp; accessories</button>
+    </div>
+    <div class="prod-grid">
+      <article class="prod glass up tilt" data-c="laptop"><div class="ph"><img src="img/laptop.jpg" alt="Laptop on a desk"><span class="badge">Laptops</span></div><div class="bd"><h3 data-ta="படிப்பு, அலுவலகம், வீட்டிற்கான லேப்டாப்">Laptops for study, office &amp; home</h3><p data-ta="Dell, HP, Lenovo, Acer, ASUS பிராண்டுகளின் அன்றாட மற்றும் அதிவேக மாடல்கள்.">Everyday and performance models from Dell, HP, Lenovo, Acer and ASUS.</p><div class="pills"><span>Student budget</span><span>Business</span><span>Performance</span></div><button class="ask" type="button" data-item="a laptop"><span data-ta="இன்றைய விலை கேளுங்கள்">Ask today's price</span><svg class="i"><use href="#i-arrow"/></svg></button></div></article>
+      <article class="prod glass up tilt" data-c="desktop"><div class="ph"><img src="img/desktop.jpg" alt="Desktop computer with monitor, keyboard and mouse"><span class="badge">Desktops</span></div><div class="bd"><h3 data-ta="பிராண்டட் & அசெம்பிள்டு டெஸ்க்டாப்">Branded &amp; assembled desktops</h3><p data-ta="மானிட்டர், கீபோர்டு, மவுஸுடன் முழு செட், அல்லது அலுவலகம், பில்லிங், கேமிங்கிற்கான கஸ்டம் பில்ட்.">Complete sets with monitor, keyboard and mouse, or custom builds for office, billing and gaming.</p><div class="pills"><span>Branded</span><span>Custom build</span><span>Office sets</span></div><button class="ask" type="button" data-item="a desktop"><span data-ta="இன்றைய விலை கேளுங்கள்">Ask today's price</span><svg class="i"><use href="#i-arrow"/></svg></button></div></article>
+      <article class="prod glass up tilt" data-c="parts"><div class="ph"><img src="img/parts.jpg" alt="SSD, RAM, hard disk, speakers and cables"><span class="badge">Parts &amp; accessories</span></div><div class="bd"><h3 data-ta="அப்கிரேட், பாகங்கள் & பெரிஃபெரல்கள்">Upgrades, parts &amp; peripherals</h3><p data-ta="SSD, RAM, ஹார்ட் டிஸ்க், ஸ்பீக்கர், கேபிள், அடாப்டர் — கடையிலேயே பொருத்தித் தருகிறோம்.">SSDs, RAM, hard disks, speakers, cables and adapters, fitted for you in the shop.</p><div class="pills"><span>SSD</span><span>RAM</span><span>Speakers</span><span>Cables</span></div><button class="ask" type="button" data-item="parts / accessories"><span data-ta="இன்றைய விலை கேளுங்கள்">Ask today's price</span><svg class="i"><use href="#i-arrow"/></svg></button></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FIX FINDER -->
+<section id="fix" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="பிரச்சனை தீர்வு">Fix finder</span>
+      <h2 data-ta="உங்கள் கணினிக்கு என்ன ஆச்சு? <span class='grad'>தட்டிப் பாருங்கள்.</span>">What's wrong with your computer? <span class="grad">Tap the symptom.</span></h2>
+      <p class="lead" data-ta="பிரச்சனையைத் தேர்ந்தெடுங்கள் — நாங்கள் என்ன சோதிப்போம் என்று பார்த்து, ஒரே தட்டலில் பதிவு செய்யுங்கள்.">Pick what you're seeing to learn what we'll check, then book that fix in one tap.</p>
+    </div>
+    <div class="fixer">
+      <div class="glass sym-list up" id="symList"></div>
+      <div class="glass result up" id="result" aria-live="polite">
+        <span class="scan"></span>
+        <span class="num" id="rNum">Symptom 01</span>
+        <h3 id="rTitle"></h3>
+        <p class="lead" id="rDesc" style="font-size:1rem"></p>
+        <ul class="checks" id="rChecks"></ul>
+        <div class="cta-row" style="margin-top:auto"><button class="btn btn-primary" id="rBook" type="button"><span data-ta="இந்த ரிப்பேரைப் பதிவு செய்">Book this fix</span><svg class="i"><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="how" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="வீட்டு வாசல் சேவை">Doorstep service</span>
+      <h2 data-ta="ரிப்பேர் எப்படி நடக்கும்.">How a repair works with us.</h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="rail"><i id="railFill"></i></div>
+      <div class="step up"><span class="n">01</span><h3 data-ta="அழைக்கவும் / வாட்ஸ்அப்">Call or WhatsApp</h3><p data-ta="பிராண்ட், மாடல், என்ன பிரச்சனை என்று சொல்லுங்கள். பிழையின் புகைப்படம் உதவும்.">Tell us the brand, model and what's going wrong. A photo of the error helps.</p></div>
+      <div class="step up"><span class="n">02</span><h3 data-ta="சோதனை">Diagnosis</h3><p data-ta="வீட்டிலோ கடையிலோ சோதித்து, பிரச்சனையை எளிய வார்த்தைகளில் விளக்குகிறோம்.">We check it at your doorstep or in the shop and explain the fault in plain words.</p></div>
+      <div class="step up"><span class="n">03</span><h3 data-ta="தெளிவான விலை">Clear quote</h3><p data-ta="ரிப்பேர் தொடங்கும் முன் செலவை நீங்கள் ஒப்புக்கொள்கிறீர்கள்.">You approve the cost before any repair or part replacement begins.</p></div>
+      <div class="step up"><span class="n">04</span><h3 data-ta="சரிசெய்து ஒப்படைப்பு">Repair &amp; return</h3><p data-ta="சரிசெய்து, சோதித்து, உங்களிடம் ஒப்படைக்கிறோம்.">Fixed, tested and handed back to you, ready to use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="எங்கள் வேலைகள்">Our work</span>
+      <h2 data-ta="உண்மையான ரிப்பேர்கள், <span class='grad'>உண்மையான கணினிகள்.</span>">Real repairs, <span class="grad">real machines.</span></h2>
+      <p class="lead" data-ta="எங்கள் வேலை மேசையிலிருந்து நேரடியாக புகைப்படங்கள் மற்றும் வீடியோக்கள். Dinesh புதியவற்றைச் சேர்த்தவுடன் இங்கே தானாகத் தோன்றும்.">Photos and videos straight from our bench. New work appears here automatically as soon as Dinesh adds it.</p>
+    </div>
+    <div class="gal-bar">
+      <div class="gal-tabs" role="tablist" aria-label="Gallery type">
+        <button class="gal-tab" role="tab" aria-selected="true" data-g="photos" type="button"><span data-ta="புகைப்படங்கள்">Photos</span><span class="ct" id="ctPhotos">·</span></button>
+        <button class="gal-tab" role="tab" aria-selected="false" data-g="videos" type="button"><span data-ta="வீடியோக்கள்">Videos</span><span class="ct" id="ctVideos">·</span></button>
+      </div>
+      <a class="gal-src" id="galSrc" href="https://drive.google.com/drive/folders/102APOgyjvXjVheAKbh5hKoPJQ38trA97" target="_blank" rel="noopener"><span data-ta="முழு ஃபோல்டரைப் பார்">View full folder</span><svg class="i"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div id="galBody"></div>
+  </div>
+</section>
+
+<!-- OWNER -->
+<section id="about" style="padding-top:40px">
+  <div class="wrap owner">
+    <div class="portrait up" id="portrait">
+      <div class="halo"></div>
+      <div class="frame"><img src="img/owner.jpg" alt="Dinesh V, founder and proprietor of Dharshik Computers"></div>
+      <div class="nameplate"><img src="img/mark.png" alt=""><div><b>Dinesh V</b><span data-ta="நிறுவனர் & உரிமையாளர்">Founder &amp; Proprietor</span></div></div>
+    </div>
+    <div class="owner-copy up">
+      <span class="eyebrow" data-ta="உரிமையாளரைச் சந்தியுங்கள்">Meet the owner</span>
+      <h2 data-ta="ஒவ்வொரு கணினியையும் <span class='grad'>தன்னுடையது போல்</span> கவனிக்கும் ஒருவர்.">A shop run by someone who treats <span class="grad">every machine like his own.</span></h2>
+      <p class="lead" data-ta="Dinesh V தர்ஷிக் கம்ப்யூட்டர்ஸை விழுப்புரம் சுதாகர் நகரில் நேரடியாக நடத்துகிறார். ஒவ்வொரு வேலையையும் தானே கவனித்து, என்ன செய்கிறோம் என்பதை விளக்கி, செய்த வேலைக்குப் பொறுப்பேற்கிறார் — அதனால்தான் 21 கூகுள் விமர்சனங்களில் 5.0 மதிப்பீடு.">Dinesh V runs Dharshik Computers personally from Sudhakar Nagar, Villupuram. He looks after each job himself, explains what's being done, and stands behind the work. It's why the shop holds a 5.0 rating from 21 Google reviews.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+917339270235"><svg class="i"><use href="#i-phone"/></svg><span data-ta="Dinesh-ஐ அழைக்க">Call Dinesh</span></a>
+        <a class="btn btn-glass" href="https://wa.me/917339270235" target="_blank" rel="noopener"><svg class="i" style="color:#25d366"><use href="#i-wa"/></svg>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATINGS -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="head center up">
+      <span class="eyebrow" data-ta="வாடிக்கையாளர் மதிப்பீடு">Customer ratings</span>
+      <h2 data-ta="விழுப்புரம் மக்கள் <span class='grad'>5 நட்சத்திரம்</span> தருகிறார்கள்.">Villupuram rates us <span class="grad">five stars.</span></h2>
+    </div>
+    <div class="ratings">
+      <a class="rate glass hero-rate up" href="https://share.google/EWj76My7JCH4qEhse" target="_blank" rel="noopener"><span class="src">Google</span><div class="score"><b>5.0</b><span class="stars">★★★★★</span></div><p data-ta="21 கூகுள் விமர்சனங்களின் அடிப்படையில். கூகுளில் படிக்க தட்டுங்கள்.">From 21 Google reviews. Tap to read them on Google.</p></a>
+      <a class="rate glass up" href="https://www.justdial.com/Villupuram/Dharshik-computers-Mandhakarai/9999P4146-4146-221011110121-B5C3_BZDET" target="_blank" rel="noopener"><span class="src">Justdial</span><div class="score"><b>5.0</b><span class="stars">★★★★★</span></div><p data-ta="கணினி டீலர்கள் & ரிப்பேர் சேவைகளில் பட்டியலிடப்பட்டுள்ளது.">Listed under computer dealers and repair services.</p></a>
+      <a class="rate glass up" href="https://share.google/EWj76My7JCH4qEhse" target="_blank" rel="noopener"><span class="src" data-ta="உங்கள் அனுபவம்">Your experience</span><div class="score"><b style="font-size:2rem" data-ta="விமர்சனம் எழுதுங்கள்">Write a review</b></div><p data-ta="எங்களிடம் சர்வீஸ் செய்தீர்களா? கூகுளில் உங்கள் கருத்தைப் பகிருங்கள்.">Had your computer serviced with us? Share your experience on Google.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head up">
+      <span class="eyebrow" data-ta="கடைக்கு வாருங்கள்">Visit the shop</span>
+      <h2 data-ta="விழுப்புரம் புதிய பேருந்து நிலையம் <span class='grad'>எதிரே.</span>">Opposite the New Bus Stand, <span class="grad">Villupuram.</span></h2>
+    </div>
+    <div class="visit-grid">
+      <div class="gallery up">
+        <a class="mapcard" href="https://share.google/EWj76My7JCH4qEhse" target="_blank" rel="noopener"><img src="img/map.jpg" alt="Map showing Dharshik Computers in Sudhakar Nagar, Viluppuram"><span class="pinpulse"></span><span class="btn btn-primary btn-sm"><span data-ta="வழி காட்டு">Get directions</span><svg class="i"><use href="#i-arrow"/></svg></span></a>
+        <figure class="sq"><img src="img/shopfront.jpg" alt="Dharshik Computers shop front signboard"><figcaption data-ta="எங்கள் கடை">Our shop front</figcaption></figure>
+        <figure class="sq"><img src="img/shop1.jpg" alt="Street outside the shop in Sudhakar Nagar"><figcaption data-ta="சுதாகர் நகர்">Sudhakar Nagar</figcaption></figure>
+      </div>
+      <div class="info up">
+        <div class="row glass"><span class="ri"><svg class="i"><use href="#i-pin"/></svg></span><div><div class="lbl" data-ta="முகவரி">Address</div><div class="v" id="addr">No. 366, Sudhakar Nagar Main Road, Opp. New Bus Stand, Viluppuram, Tamil Nadu 605103</div><div class="sub">Plus code WFJP+JW Viluppuram</div></div><button class="copy" data-copy="addr" type="button">Copy</button></div>
+        <div class="row glass"><span class="ri"><svg class="i"><use href="#i-phone"/></svg></span><div><div class="lbl" data-ta="தொலைபேசி">Phone</div><div class="v"><a href="tel:+917339270235" id="mob">+91 73392 70235</a></div><div class="sub"><a href="tel:+914146356734" style="text-decoration:none">04146 356734</a> · landline</div></div><button class="copy" data-copy="mob" type="button">Copy</button></div>
+        <div class="row glass"><span class="ri"><svg class="i"><use href="#i-mail"/></svg></span><div style="min-width:0"><div class="lbl" data-ta="மின்னஞ்சல்">Email</div><div class="v" id="mail">dharshikcomputers@gmail.com</div></div><button class="copy" data-copy="mail" type="button">Copy</button></div>
+        <div class="row glass"><span class="ri"><svg class="i"><use href="#i-clock"/></svg></span><div style="flex:1;min-width:0"><div class="lbl" data-ta="நேரம்">Hours</div><div class="v" data-ta="தினமும் · காலை 10 – இரவு 10">Every day · 10:00 AM – 10:00 PM</div><div class="sub" id="openNow"></div><div class="week" id="week"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head center up">
+      <span class="eyebrow" data-ta="கேள்விகள்">Questions</span>
+      <h2 data-ta="அடிக்கடி கேட்கப்படும் கேள்விகள்.">Frequently asked.</h2>
+    </div>
+    <div class="faq">
+      <details class="glass up" open><summary data-ta="வீட்டிற்கு வந்து சர்வீஸ் செய்வீர்களா?">Do you come to my home or office?</summary><p data-ta="ஆம். அழைக்கவும் அல்லது வாட்ஸ்அப் செய்யவும் — விழுப்புரம் மற்றும் சுற்றுப்புறங்களில் டெக்னீஷியன் வருவார்.">Yes. Call or WhatsApp +91 73392 70235 and a technician will visit you in and around Villupuram.</p></details>
+      <details class="glass up"><summary data-ta="எந்த பிராண்டுகளை சர்வீஸ் செய்கிறீர்கள்?">Which brands do you service?</summary><p data-ta="Dell, HP, Lenovo, Acer, ASUS, Samsung, LG, HCL மற்றும் அசெம்பிள்டு டெஸ்க்டாப்கள்.">Dell, HP, Lenovo, Acer, ASUS, Samsung, LG and HCL, plus assembled desktops.</p></details>
+      <details class="glass up"><summary data-ta="மதர்போர்டு பழுதானால் புதியது வாங்க வேண்டுமா?">My motherboard is dead. Do I need a new one?</summary><p data-ta="பெரும்பாலும் இல்லை. சிப்-லெவல் ரிப்பேர் மூலம் பழுதான கூறை மட்டும் மாற்றுகிறோம்; ரிப்பேர் முடியாவிட்டால் முன்பே சொல்வோம்.">Usually not. With chip-level repair we replace only the failed component, and we'll tell you up front if a board can't be saved.</p></details>
+      <details class="glass up"><summary data-ta="கடை நேரம் என்ன?">What are your shop hours?</summary><p data-ta="வாரத்தின் அனைத்து நாட்களும் காலை 10 முதல் இரவு 10 வரை.">Every day of the week, 10:00 AM to 10:00 PM.</p></details>
+      <details class="glass up"><summary data-ta="புதிய லேப்டாப் வாங்கலாமா?">Can I buy a new laptop or desktop from you?</summary><p data-ta="ஆம். உங்கள் பட்ஜெட்டைச் சொல்லுங்கள் — கிடைக்கும் மாடல்களையும் இன்றைய விலையையும் சொல்கிறோம்.">Yes. Tell us your budget and we'll share the models in stock and today's price.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book" style="padding-top:20px">
+  <div class="wrap book">
+    <div class="book-side up">
+      <span class="eyebrow" data-ta="ரிப்பேர் பதிவு">Book a repair</span>
+      <h2 data-ta="பிரச்சனையைச் சொல்லுங்கள். <span class='grad'>நாங்கள் அழைக்கிறோம்.</span>">Tell us the problem. <span class="grad">We'll call you back.</span></h2>
+      <p class="lead" data-ta="விவரங்களை நிரப்பி நேரடியாக எங்கள் வாட்ஸ்அப்பிற்கு அனுப்புங்கள். பேச விரும்பினால் அழையுங்கள்.">Fill in the details and send them straight to our WhatsApp. Prefer to talk? Call us directly.</p>
+      <div class="quick">
+        <a class="glass" href="tel:+917339270235"><span class="qi" style="background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--on-accent)"><svg class="i"><use href="#i-phone"/></svg></span><span><b>+91 73392 70235</b><small data-ta="மொபைல் · தினமும் காலை 10 – இரவு 10">Mobile · 10 AM – 10 PM daily</small></span></a>
+        <a class="glass" href="tel:+914146356734"><span class="qi" style="background:var(--blue)"><svg class="i"><use href="#i-phone"/></svg></span><span><b>04146 356734</b><small data-ta="லேண்ட்லைன்">Landline</small></span></a>
+        <a class="glass" href="https://wa.me/917339270235" target="_blank" rel="noopener"><span class="qi" style="background:#25d366;color:#05250f"><svg class="i"><use href="#i-wa"/></svg></span><span><b>WhatsApp</b><small data-ta="பிழையின் புகைப்படம் அனுப்புங்கள்">Send a photo of the error</small></span></a>
+      </div>
+    </div>
+    <form id="form" class="glass up" novalidate>
+      <div class="f"><label for="name" data-ta="உங்கள் பெயர்">Your name</label><input id="name" autocomplete="name" placeholder="e.g. Karthik"></div>
+      <div class="f"><label for="phone" data-ta="மொபைல் எண்">Mobile number</label><input id="phone" inputmode="tel" autocomplete="tel" placeholder="10-digit number"></div>
+      <div class="f"><label for="device" data-ta="சாதனம்">Device</label><select id="device"><option>Laptop</option><option>Desktop</option><option>Monitor / peripheral</option><option>Buying a new system</option></select></div>
+      <div class="f"><label for="brand" data-ta="பிராண்ட்">Brand</label><select id="brand"><option>Dell</option><option>HP</option><option>Lenovo</option><option>Acer</option><option>ASUS</option><option>Samsung</option><option>LG</option><option>HCL</option><option>Assembled / other</option></select></div>
+      <div class="f full"><label data-ta="சேவை வகை">Service type</label><div class="seg" id="seg"><button type="button" aria-pressed="true" data-v="Doorstep service" data-ta="வீட்டு வாசல் சேவை">Doorstep service</button><button type="button" aria-pressed="false" data-v="I'll bring it to the shop" data-ta="கடைக்குக் கொண்டு வருகிறேன்">I'll bring it in</button></div></div>
+      <div class="f full"><label for="issue" data-ta="என்ன பிரச்சனை?">What's the problem?</label><textarea id="issue" placeholder="e.g. Laptop turns on but no display, started after a power cut."></textarea></div>
+      <div class="err" id="err" hidden></div>
+      <div class="f full"><button class="btn btn-primary" type="submit"><svg class="i"><use href="#i-wa"/></svg><span data-ta="வாட்ஸ்அப் செய்தி தயார் செய்">Prepare WhatsApp message</span></button></div>
+      <div class="out" id="out" hidden><div class="msg" id="msg"></div><a class="btn btn-primary" id="waLink" target="_blank" rel="noopener" style="background:#25d366;color:#05250f;box-shadow:none"><svg class="i"><use href="#i-wa"/></svg><span data-ta="வாட்ஸ்அப் திறந்து அனுப்பு">Open WhatsApp and send</span></a></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <a class="brand" href="#top" style="margin:0"><img src="img/mark.png" alt=""><span><b>DHARSHIK COMPUTERS</b><small>DESKTOP &amp; LAPTOP SERVICE AT YOUR DOORSTEP</small></span></a>
+        <p>No. 366, Sudhakar Nagar Main Road, Opp. New Bus Stand, Viluppuram, Tamil Nadu 605103</p>
+      </div>
+      <div><h4>Explore</h4><a href="#services" data-ta="சேவைகள்">Services</a><a href="#products" data-ta="பொருட்கள்">Products</a><a href="#gallery" data-ta="கேலரி">Gallery</a><a href="#fix" data-ta="பிரச்சனை தீர்வு">Fix finder</a><a href="#faq" data-ta="கேள்விகள்">FAQ</a></div>
+      <div><h4>Find us</h4><a href="https://share.google/EWj76My7JCH4qEhse" target="_blank" rel="noopener">Google Maps</a><a href="https://www.justdial.com/Villupuram/Dharshik-computers-Mandhakarai/9999P4146-4146-221011110121-B5C3_BZDET" target="_blank" rel="noopener">Justdial</a><a href="https://wa.me/917339270235" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+917339270235">+91 73392 70235</a></div>
+    </div>
+    <div class="bigname" aria-hidden="true">DHARSHIK</div>
+    <p style="color:var(--soft);font-size:.82rem;margin-top:18px">© <span id="yr">2026</span> Dharshik Computers, Viluppuram. Brand names belong to their respective owners.</p>
+  </div>
+</footer>
+
+<div class="fab">
+  <button class="top" id="toTop" type="button" aria-label="Back to top" hidden><svg><use href="#i-up"/></svg></button>
+  <a class="wa" href="https://wa.me/917339270235" target="_blank" rel="noopener" aria-label="WhatsApp Dharshik Computers" style="position:relative"><svg><use href="#i-wa"/></svg></a>
+  <a class="call" href="tel:+917339270235" aria-label="Call Dharshik Computers"><svg><use href="#i-phone"/></svg></a>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var root=document.documentElement, $=function(s){return document.querySelector(s)}, $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+$('#yr').textContent=new Date().getFullYear();
+var toastT; function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},2200)}
+
+/* loader */
+addEventListener('load',function(){setTimeout(function(){$('#loader').classList.add('done')},350)});
+setTimeout(function(){$('#loader').classList.add('done')},2400);
+
+/* theme */
+function isDark(){var a=root.getAttribute('data-theme');return a?a==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+var savedTheme=store('dc-theme'); if(savedTheme) root.setAttribute('data-theme',savedTheme);
+$('#themeBtn').addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);store('dc-theme',n);if(window.__scene)window.__scene.theme()});
+
+/* language */
+var L='en', T={
+ en:{open:'Open now · until 10 PM',closed:'Closed now · opens 10 AM',sym:'Symptom',copy:'Copied',sel:'Selected',err:'Please add your name, a 10-digit mobile number and a short description of the problem.',days:['Sun','Mon','Tue','Wed','Thu','Fri','Sat']},
+ ta:{open:'இப்போது திறந்துள்ளது · இரவு 10 வரை',closed:'இப்போது மூடப்பட்டுள்ளது · காலை 10க்கு திறக்கும்',sym:'பிரச்சனை',copy:'நகலெடுக்கப்பட்டது',sel:'தேர்ந்தெடுக்கப்பட்டது',err:'உங்கள் பெயர், 10 இலக்க மொபைல் எண், பிரச்சனையின் சிறு விவரம் ஆகியவற்றைச் சேர்க்கவும்.',days:['ஞா','தி','செ','பு','வி','வெ','ச']}
+};
+$$('[data-ta]').forEach(function(el){el.setAttribute('data-en',el.innerHTML)});
+function setLang(l){L=l;document.body.classList.toggle('ta',l==='ta');root.lang=l==='ta'?'ta':'en';
+  $$('[data-ta]').forEach(function(el){el.innerHTML=el.getAttribute(l==='ta'?'data-ta':'data-en')});
+  $('#langBtn').textContent=l==='ta'?'EN':'தமிழ்';store('dc-lang',l);status();renderSym(cur,true);if(window.__galRefresh)window.__galRefresh();}
+$('#langBtn').addEventListener('click',function(){setLang(L==='en'?'ta':'en')});
+
+/* open now + week */
+function status(){try{
+  var n=new Date(),ist=new Date(n.getTime()+(n.getTimezoneOffset()+330)*60000),h=ist.getHours()+ist.getMinutes()/60,open=h>=10&&h<22;
+  $('#liveTxt').textContent=open?T[L].open:T[L].closed;$('#liveDot').classList.toggle('closed',!open);
+  var o=$('#openNow');o.textContent='● '+(open?T[L].open:T[L].closed);o.style.color=open?'var(--ok)':'var(--bad)';
+  $('#week').innerHTML=T[L].days.map(function(d,i){return '<span class="'+(i===ist.getDay()?'today':'')+'">'+d+'</span>'}).join('');
+}catch(e){}}
+status(); setInterval(status,60000);
+
+/* nav: scrolled state, active link, progress, back to top */
+var nav=$('#nav'),prog=$('#progress'),top=$('#toTop');
+function onScroll(){var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;nav.classList.toggle('scrolled',y>10);prog.style.transform='scaleX('+(h>0?y/h:0)+')';top.hidden=y<700;}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+top.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
+var secs=['services','products','gallery','fix','about','visit'].map(function(id){return document.getElementById(id)});
+if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$$('#links a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(function(s){so.observe(s)})}
+
+/* mobile drawer */
+var dr=$('#drawer');
+$('#menuBtn').addEventListener('click',function(){dr.hidden=false;if(window.gsap&&!reduce)gsap.from('#drawer a',{y:30,opacity:0,stagger:.05,duration:.5,ease:'power3.out'})});
+$('#closeMenu').addEventListener('click',function(){dr.hidden=true});
+$$('#drawer a').forEach(function(a){a.addEventListener('click',function(){dr.hidden=true})});
+
+/* marquee duplicate */
+var mq=$('#mq');mq.innerHTML+=mq.innerHTML;
+
+/* copy */
+$$('.copy').forEach(function(b){b.addEventListener('click',function(){
+  var el=document.getElementById(b.dataset.copy),t=el.textContent.trim();
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);toast(T[L].sel)}
+  try{navigator.clipboard.writeText(t).then(function(){toast(T[L].copy+': '+t)},sel)}catch(e){sel()}
+})});
+
+/* product filter */
+$$('.tab').forEach(function(tb){tb.addEventListener('click',function(){
+  $$('.tab').forEach(function(x){x.setAttribute('aria-selected',x===tb)});
+  var f=tb.dataset.f;$$('.prod').forEach(function(p){p.classList.toggle('hide',f!=='all'&&p.dataset.c!==f)});
+  if(window.gsap&&!reduce)gsap.fromTo('.prod:not(.hide)',{y:24,scale:.97},{y:0,scale:1,duration:.5,stagger:.06,ease:'power3.out'});
+})});
+
+/* booking helpers */
+var service='Doorstep service';
+$$('#seg button').forEach(function(b){b.addEventListener('click',function(){$$('#seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});service=b.dataset.v})});
+function goBook(device,text){if(device)$('#device').value=device;$('#issue').value=text;document.getElementById('book').scrollIntoView({behavior:reduce?'auto':'smooth'});setTimeout(function(){$('#name').focus({preventScroll:true})},700)}
+$$('.ask').forEach(function(a){a.addEventListener('click',function(){goBook('Buying a new system','Please share available models and today\'s price for '+a.dataset.item+'.')})});
+$('#form').addEventListener('submit',function(e){e.preventDefault();
+  var g=function(id){return document.getElementById(id).value.trim()},err=$('#err');
+  if(!g('name')||!/^[0-9+ ]{10,15}$/.test(g('phone'))||!g('issue')){err.textContent=T[L].err;err.hidden=false;return}
+  err.hidden=true;
+  var text='Hi Dharshik Computers,\nName: '+g('name')+'\nMobile: '+g('phone')+'\nDevice: '+g('brand')+' '+g('device')+'\nService: '+service+'\nProblem: '+g('issue');
+  $('#msg').textContent=text;$('#waLink').href='https://wa.me/917339270235?text='+encodeURIComponent(text);$('#out').hidden=false;
+  if(window.gsap&&!reduce)gsap.from('#out',{y:16,duration:.5,ease:'power3.out'});
+});
+
+/* fix finder */
+var IC={
+ power:'<path d="M12 2v10M18.4 6.6a9 9 0 1 1-12.8 0"/>',
+ display:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="m8 8 8 4M16 8l-8 4M8 20h8"/>',
+ slow:'<path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/>',
+ screen:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="m9 4 2 5-3 2 3 5"/>',
+ battery:'<rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2M11 9l-2 3h4l-2 3"/>',
+ soft:'<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>'
+};
+var SY=[
+ {k:'power',dev:'Laptop',en:['Won\'t turn on','Laptop or PC is completely dead','No lights, no fan, no response when you press power.',['Adapter, cable and power socket','Battery and charging circuit','Power IC and motherboard power rails']],
+  ta:['ஆன் ஆகவில்லை','லேப்டாப் அல்லது PC முற்றிலும் இயங்கவில்லை','பவர் பட்டன் அழுத்தினாலும் லைட், ஃபேன் எதுவும் இல்லை.',['அடாப்டர், கேபிள், பவர் சாக்கெட்','பேட்டரி மற்றும் சார்ஜிங் சர்க்யூட்','பவர் IC மற்றும் மதர்போர்டு பவர் ரெயில்கள்']]},
+ {k:'display',dev:'Laptop',en:['No display','Powers on, but the screen stays black','Fans spin and lights come on, yet nothing shows on screen.',['RAM seating and memory test','Display cable and screen panel','Graphics and board-level display circuit']],
+  ta:['டிஸ்ப்ளே இல்லை','ஆன் ஆகிறது, ஆனால் திரை கருப்பாக உள்ளது','ஃபேன் ஓடுகிறது, லைட் எரிகிறது, ஆனால் திரையில் எதுவும் இல்லை.',['RAM பொருத்தம் மற்றும் மெமரி சோதனை','டிஸ்ப்ளே கேபிள் மற்றும் ஸ்கிரீன் பேனல்','கிராஃபிக்ஸ் மற்றும் போர்டு டிஸ்ப்ளே சர்க்யூட்']]},
+ {k:'slow',dev:'Laptop',en:['Very slow','Takes forever to start or open apps','Boot takes minutes, apps freeze, the fan is always loud.',['Hard disk health, with an SSD upgrade option','RAM usage, with an upgrade option','Virus, startup clutter and overheating']],
+  ta:['மிக மெதுவாக உள்ளது','ஸ்டார்ட் ஆகவும் ஆப் திறக்கவும் நேரமாகிறது','பூட் ஆக நிமிடங்கள் ஆகிறது, ஆப்கள் உறைகின்றன, ஃபேன் சத்தம்.',['ஹார்ட் டிஸ்க் நிலை — SSD அப்கிரேட் வாய்ப்பு','RAM பயன்பாடு — அப்கிரேட் வாய்ப்பு','வைரஸ், ஸ்டார்ட்அப் குப்பை, அதிக வெப்பம்']]},
+ {k:'screen',dev:'Laptop',en:['Broken screen or keys','Cracked screen, lines, or keys not working','Physical damage to the panel, hinges or keyboard.',['Screen panel model and matching replacement','Hinge and display cable condition','Keyboard and touchpad replacement']],
+  ta:['ஸ்கிரீன் / கீபோர்டு உடைவு','விரிசல் திரை, கோடுகள், அல்லது கீ வேலை செய்யவில்லை','பேனல், ஹிஞ்ச் அல்லது கீபோர்டில் சேதம்.',['ஸ்கிரீன் மாடல் மற்றும் பொருத்தமான மாற்று','ஹிஞ்ச் மற்றும் டிஸ்ப்ளே கேபிள் நிலை','கீபோர்டு, டச்பேட் மாற்றம்']]},
+ {k:'battery',dev:'Laptop',en:['Battery or charging','Battery drains fast or won\'t charge','Works only when plugged in, or charging stops at a percentage.',['Battery health and wear level','Charging port and DC jack','Adapter output and charging IC']],
+  ta:['பேட்டரி / சார்ஜிங்','பேட்டரி வேகமாக தீர்கிறது அல்லது சார்ஜ் ஆகவில்லை','பிளக் செய்தால் மட்டுமே இயங்குகிறது, அல்லது சார்ஜ் நின்றுவிடுகிறது.',['பேட்டரி நிலை மற்றும் தேய்மானம்','சார்ஜிங் போர்ட் மற்றும் DC ஜாக்','அடாப்டர் அவுட்புட் மற்றும் சார்ஜிங் IC']]},
+ {k:'soft',dev:'Laptop',en:['Windows or software error','Blue screen, boot loop or error messages','Windows won\'t load, keeps restarting, or apps crash.',['Startup repair or a clean Windows install','Drivers and pending updates','Antivirus scan and software setup']],
+  ta:['விண்டோஸ் / மென்பொருள் பிழை','ப்ளூ ஸ்கிரீன், ரீஸ்டார்ட் லூப், பிழைச் செய்திகள்','விண்டோஸ் லோட் ஆகவில்லை, திரும்பத் திரும்ப ரீஸ்டார்ட் ஆகிறது.',['ஸ்டார்ட்அப் ரிப்பேர் அல்லது புதிய விண்டோஸ் நிறுவல்','டிரைவர்கள் மற்றும் அப்டேட்கள்','ஆன்டிவைரஸ் ஸ்கேன் மற்றும் மென்பொருள் அமைப்பு']]}
+];
+var cur=0,list=$('#symList');
+list.innerHTML=SY.map(function(s,i){return '<button class="sym" type="button" aria-pressed="'+(i===0)+'" data-i="'+i+'"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+IC[s.k]+'</svg></span><span class="sl"></span></button>'}).join('');
+function renderSym(i,silent){cur=i;var s=SY[i][L];
+  $$('.sym').forEach(function(b,j){b.setAttribute('aria-pressed',j===i);b.querySelector('.sl').textContent=SY[j][L][0]});
+  $('#rNum').textContent=T[L].sym+' 0'+(i+1);$('#rTitle').textContent=s[1];$('#rDesc').textContent=s[2];
+  $('#rChecks').innerHTML=s[3].map(function(c){return '<li><svg class="i"><use href="#i-check"/></svg><span>'+c+'</span></li>'}).join('');
+  if(!silent&&!reduce){var r=$('#result');r.classList.remove('scanning');void r.offsetWidth;r.classList.add('scanning');
+    if(window.gsap)gsap.from('#rTitle,#rDesc,#rChecks li',{y:14,duration:.45,stagger:.05,ease:'power3.out'});}
+}
+$$('.sym').forEach(function(b){b.addEventListener('click',function(){renderSym(+b.dataset.i)})});
+renderSym(0,true);
+$('#rBook').addEventListener('click',function(){var s=SY[cur];goBook(s.dev,s.en[0]+': '+s.en[2])});
+
+/* ===== Gallery: reads the shop's public Google Drive folders through /api/gallery ===== */
+var GAL={
+  folders:{photos:'102APOgyjvXjVheAKbh5hKoPJQ38trA97',videos:'1u8xeYLw0fCrC7PJFsbxAKPEO7_P_oV_q'},
+  data:{photos:null,videos:null},state:{photos:'idle',videos:'idle'},tab:'photos',shown:{photos:24,videos:12},list:[],idx:0
+};
+var GT={
+  en:{loading:'Loading the latest work…',offTitle:'Gallery opens on the live website',offText:'Photos and videos load straight from our Google Drive folders once the site is live. You can also open the folders now.',emptyTitle:'Nothing here yet',emptyText:'New photos and videos will appear here as soon as they are added.',openP:'Open photo folder',openV:'Open video folder',more:'Show more',play:'Play video',noEmbed:'This video can’t play here. Open it on Google Drive instead.',openDrive:'Open on Google Drive'},
+  ta:{loading:'சமீபத்திய வேலைகள் ஏற்றப்படுகின்றன…',offTitle:'கேலரி நேரடி இணையதளத்தில் திறக்கும்',offText:'தளம் நேரலையில் வந்ததும், புகைப்படங்கள் மற்றும் வீடியோக்கள் எங்கள் கூகுள் டிரைவ் ஃபோல்டர்களிலிருந்து நேரடியாக ஏற்றப்படும். இப்போதே ஃபோல்டர்களைத் திறக்கலாம்.',emptyTitle:'இன்னும் எதுவும் இல்லை',emptyText:'புதிய புகைப்படங்கள், வீடியோக்கள் சேர்க்கப்பட்டவுடன் இங்கே தோன்றும்.',openP:'புகைப்பட ஃபோல்டர்',openV:'வீடியோ ஃபோல்டர்',more:'மேலும் காட்டு',play:'வீடியோ இயக்கு',noEmbed:'இந்த வீடியோ இங்கே இயங்கவில்லை. கூகுள் டிரைவில் திறக்கவும்.',openDrive:'கூகுள் டிரைவில் திற'}
+};
+function g_(k){return GT[L][k]}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function nice(n){return (n||'').replace(/\.[a-z0-9]{2,5}$/i,'').replace(/[_-]+/g,' ').replace(/\b(IMG|VID|PXL|WA)\s?\d{6,}.*$/i,'').trim()}
+function thumb(id,w){return 'https://drive.google.com/thumbnail?id='+encodeURIComponent(id)+'&sz=w'+w}
+var galBody=$('#galBody');
+function folderBtns(){return '<div class="cta-row"><a class="btn btn-primary btn-sm" href="https://drive.google.com/drive/folders/'+GAL.folders.photos+'" target="_blank" rel="noopener">'+g_('openP')+'</a><a class="btn btn-glass btn-sm" href="https://drive.google.com/drive/folders/'+GAL.folders.videos+'" target="_blank" rel="noopener">'+g_('openV')+'</a></div>'}
+function galEmpty(title,text){return '<div class="glass gal-empty"><div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><div><h3>'+title+'</h3><p>'+text+'</p>'+folderBtns()+'</div></div>'}
+function renderGal(){
+  var t=GAL.tab,st=GAL.state[t],d=GAL.data[t];
+  $('#galSrc').href='https://drive.google.com/drive/folders/'+GAL.folders[t];
+  if(st==='loading'||st==='idle'){var s='';for(var i=0;i<8;i++)s+='<div class="sk"></div>';galBody.innerHTML='<p class="sr-only" style="position:absolute;left:-9999px">'+g_('loading')+'</p><div class="gal-grid">'+s+'</div>';return}
+  if(st==='off'){galBody.innerHTML=galEmpty(g_('offTitle'),g_('offText'));return}
+  if(!d||!d.length){galBody.innerHTML=galEmpty(g_('emptyTitle'),g_('emptyText'));return}
+  var n=Math.min(GAL.shown[t],d.length),html='';
+  for(var j=0;j<n;j++){var it=d[j],cap=esc(nice(it.name)||'');
+    if(t==='photos')html+='<button class="gi" type="button" data-i="'+j+'"><img loading="lazy" referrerpolicy="no-referrer" src="'+thumb(it.id,700)+'" onerror="this.closest(\'.gi\').remove()" alt="'+(cap||'Work photo')+'">'+(cap?'<span class="cap">'+cap+'</span>':'')+'</button>';
+    else html+='<button class="gi vid" type="button" data-i="'+j+'" aria-label="'+g_('play')+(cap?': '+cap:'')+'"><img loading="lazy" referrerpolicy="no-referrer" src="'+thumb(it.id,800)+'" alt="" onerror="this.style.background=\'linear-gradient(135deg,#13246b,#040714)\';this.removeAttribute(\'src\')"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></span>'+(cap?'<span class="cap">'+cap+'</span>':'')+'</button>';
+  }
+  galBody.innerHTML='<div class="gal-grid'+(t==='videos'?' vids':'')+'">'+html+'</div>'+(n<d.length?'<div class="gal-more"><button class="btn btn-glass" id="galMore" type="button">'+g_('more')+' ('+(d.length-n)+')</button></div>':'');
+  $$('#galBody .gi').forEach(function(b){b.addEventListener('click',function(){openLb(+b.dataset.i)})});
+  var m=$('#galMore');if(m)m.addEventListener('click',function(){GAL.shown[t]+=t==='photos'?24:12;renderGal()});
+  if(window.gsap&&!reduce)gsap.from('#galBody .gi',{y:30,duration:.6,stagger:.04,ease:'power3.out'});
+}
+function loadGal(t){
+  if(GAL.state[t]!=='idle')return;GAL.state[t]='loading';renderGal();
+  var ctl=('AbortController' in window)?new AbortController():null;var to=setTimeout(function(){ctl&&ctl.abort()},12000);
+  fetch('/api/gallery?type='+t,ctl?{signal:ctl.signal}:{}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+    clearTimeout(to);GAL.data[t]=(j.items||[]).filter(function(x){return x&&x.id});GAL.state[t]='ready';
+    $(t==='photos'?'#ctPhotos':'#ctVideos').textContent=GAL.data[t].length;
+  }).catch(function(){clearTimeout(to);GAL.state[t]='off'}).then(function(){if(GAL.tab===t)renderGal()});
+}
+$$('.gal-tab').forEach(function(b){b.addEventListener('click',function(){$$('.gal-tab').forEach(function(x){x.setAttribute('aria-selected',x===b)});GAL.tab=b.dataset.g;renderGal();loadGal(GAL.tab)})});
+window.__galRefresh=renderGal;
+renderGal();
+if('IntersectionObserver' in window){var gio=new IntersectionObserver(function(e){if(e[0].isIntersecting){loadGal('photos');loadGal('videos');gio.disconnect()}},{rootMargin:'600px'});gio.observe($('#gallery'))}else{loadGal('photos');loadGal('videos')}
+
+/* lightbox */
+var lb=document.createElement('div');lb.className='lb';lb.hidden=true;lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');
+lb.innerHTML='<div class="lb-top"><span class="n" id="lbN"></span><span class="t" id="lbT"></span><a class="gal-src" id="lbOpen" target="_blank" rel="noopener" style="color:#aab4d8"></a><button type="button" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="lb-stage"><button type="button" class="nav-b" id="lbP" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="lb-media" id="lbM"></div><button type="button" class="nav-b" id="lbNx" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>';
+document.body.appendChild(lb);
+var lastFocus=null;
+function showLb(){var d=GAL.data[GAL.tab],it=d[GAL.idx];if(!it)return;
+  $('#lbN').textContent=(GAL.idx+1)+' / '+d.length;$('#lbT').textContent=nice(it.name);
+  var o=$('#lbOpen');o.href='https://drive.google.com/file/d/'+it.id+'/view';o.textContent=g_('openDrive');
+  var m=$('#lbM');
+  if(GAL.tab==='photos')m.innerHTML='<img referrerpolicy="no-referrer" src="'+thumb(it.id,2000)+'" alt="'+esc(nice(it.name)||'Work photo')+'">';
+  else m.innerHTML='<iframe src="https://drive.google.com/file/d/'+encodeURIComponent(it.id)+'/preview" allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="'+esc(nice(it.name)||'Video')+'"></iframe>';
+}
+function openLb(i){lastFocus=document.activeElement;GAL.idx=i;lb.hidden=false;document.body.style.overflow='hidden';showLb();$('#lbX').focus()}
+function closeLb(){lb.hidden=true;$('#lbM').innerHTML='';document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+function step(k){var d=GAL.data[GAL.tab];GAL.idx=(GAL.idx+k+d.length)%d.length;showLb()}
+$('#lbX').addEventListener('click',closeLb);$('#lbP').addEventListener('click',function(){step(-1)});$('#lbNx').addEventListener('click',function(){step(1)});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target.id==='lbM')closeLb()});
+addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+var sx0=null;lb.addEventListener('touchstart',function(e){sx0=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){if(sx0===null)return;var dx=e.changedTouches[0].clientX-sx0;if(Math.abs(dx)>50&&GAL.tab==='photos')step(dx<0?1:-1);sx0=null});
+
+/* spotlight + tilt */
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(fine&&!reduce){
+  $$('.spot').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  $$('.spot,.tilt').forEach(function(c){
+    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(900px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) translateY(-4px)'});
+    c.addEventListener('pointerleave',function(){c.style.transform=''});
+  });
+  $$('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});
+}
+
+/* saved language last (needs fix finder ready) */
+if(store('dc-lang')==='ta') setLang('ta');
+
+/* GSAP choreography — content is visible at rest; motion only adds movement */
+if(window.gsap&&!reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('#heroTitle .line>span',{yPercent:110,duration:1.1,stagger:.12,ease:'expo.out',delay:.5});
+  gsap.from('.hero .live,.hero .lead,.hero .cta-row,.hero .trust,.scroll-hint',{y:26,duration:1,stagger:.08,ease:'power3.out',delay:.8});
+  gsap.from('.float-card',{scale:.6,duration:.9,stagger:.15,ease:'back.out(1.8)',delay:1.1});
+  $$('.up').forEach(function(el){
+    if(el.getBoundingClientRect().top<innerHeight) return;
+    gsap.from(el,{y:56,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}});
+  });
+  gsap.fromTo('#railFill',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#timeline',start:'top 80%',end:'bottom 60%',scrub:true}});
+  gsap.to('.bigname',{xPercent:-12,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+  gsap.to('#portrait .frame',{y:-30,ease:'none',scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:true}});
+  $$('.count').forEach(function(c){
+    if(c.getBoundingClientRect().top<innerHeight) return;
+    var to=parseFloat(c.dataset.to),dec=+(c.dataset.dec||0),o={v:0};
+    ScrollTrigger.create({trigger:c,start:'top 90%',once:true,onEnter:function(){gsap.fromTo(o,{v:0},{v:to,duration:1.6,ease:'power2.out',onUpdate:function(){c.textContent=o.v.toFixed(dec)}})}});
+  });
+}
+
+/* ================= Three.js hero ================= */
+var stage=$('#stage'),cv=$('#three');
+if(!window.THREE) return;
+var renderer;try{renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){return}
+stage.classList.add('gl');
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(34,1,.1,100);
+cam.position.set(0,1.5,10);cam.lookAt(0,.35,0);
+scene.add(new THREE.HemisphereLight(0x8fb0ff,0x1a1030,.7));
+var key=new THREE.DirectionalLight(0xffffff,1.1);key.position.set(4,7,6);scene.add(key);
+var warm=new THREE.PointLight(0xff7a20,2.6,16);warm.position.set(-3.5,1.2,3);scene.add(warm);
+var cool=new THREE.PointLight(0x3d7dff,2.8,16);cool.position.set(3.8,-1,2.5);scene.add(cool);
+
+var world=new THREE.Group();scene.add(world);
+function glowTex(c1,c2){var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d'),g=x.createRadialGradient(128,128,0,128,128,128);g.addColorStop(0,c1);g.addColorStop(.4,c2);g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,256,256);return new THREE.CanvasTexture(c)}
+var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex('rgba(255,140,40,.9)','rgba(255,95,15,.25)'),blending:THREE.AdditiveBlending,transparent:true,depthWrite:false}));
+halo.scale.set(9,9,1);halo.position.set(0,.6,-2.2);world.add(halo);
+var halo2=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex('rgba(60,120,255,.8)','rgba(47,107,255,.2)'),blending:THREE.AdditiveBlending,transparent:true,depthWrite:false}));
+halo2.scale.set(7,7,1);halo2.position.set(2,-1,-2.5);world.add(halo2);
+
+/* screen */
+var sc=document.createElement('canvas');sc.width=1024;sc.height=640;var sx=sc.getContext('2d');
+var logo=new Image();logo.src='img/mark.png';var tex=new THREE.CanvasTexture(sc);
+var bootLines=['> POST ............ OK','> RAM 16GB ........ OK','> SSD NVMe ........ OK','> Board power ..... OK','> Display ......... OK'];
+function drawScreen(t){
+  var g=sx.createLinearGradient(0,0,1024,640);g.addColorStop(0,'#0b1d5c');g.addColorStop(1,'#030820');sx.fillStyle=g;sx.fillRect(0,0,1024,640);
+  sx.strokeStyle='rgba(80,140,255,.16)';sx.lineWidth=1;
+  for(var i=0;i<1024;i+=32){sx.beginPath();sx.moveTo(i,0);sx.lineTo(i,640);sx.stroke()}
+  for(var j=0;j<640;j+=32){sx.beginPath();sx.moveTo(0,j);sx.lineTo(1024,j);sx.stroke()}
+  var cyc=t%8;
+  if(cyc<3.2){ /* boot log */
+    sx.font='500 30px JetBrains Mono, monospace';sx.textAlign='left';
+    var n=Math.min(bootLines.length,Math.floor(cyc/.55)+1);
+    for(var k=0;k<n;k++){sx.fillStyle=k===n-1?'#ffb21a':'#7fe0a6';sx.fillText(bootLines[k],90,150+k*64)}
+    if(Math.floor(t*2)%2)sx.fillRect(90,150+n*64-24,18,30);
+  }else{
+    var s=280+Math.sin(t*2)*8;if(logo.complete&&logo.naturalWidth)sx.drawImage(logo,512-s/2,210-s*.45,s,s*.895);
+    sx.fillStyle='#fff';sx.font='800 54px Unbounded, Arial Black, sans-serif';sx.textAlign='center';sx.fillText('DHARSHIK COMPUTERS',512,440);
+    sx.fillStyle='#a8b6e6';sx.font='600 26px Manrope, sans-serif';sx.fillText('Desktop & Laptop Service · Villupuram',512,486);
+    var p=Math.min(1,(cyc-3.2)/4.2);sx.fillStyle='rgba(255,255,255,.12)';sx.fillRect(262,530,500,12);
+    var gb=sx.createLinearGradient(262,0,762,0);gb.addColorStop(0,'#ffb21a');gb.addColorStop(1,'#ff5f0f');sx.fillStyle=gb;sx.fillRect(262,530,500*p,12);
+    sx.fillStyle='#7fe0a6';sx.font='500 22px JetBrains Mono, monospace';sx.fillText(p<1?'DIAGNOSTIC '+Math.floor(p*100)+'%':'ALL SYSTEMS OK ✓',512,584);
+  }
+  tex.needsUpdate=true;
+}
+drawScreen(0);
+
+var body=new THREE.MeshStandardMaterial({color:0x1a2452,metalness:.85,roughness:.28});
+var edge=new THREE.MeshStandardMaterial({color:0xff7a20,emissive:0xff5f0f,emissiveIntensity:.8,metalness:.4,roughness:.4});
+var laptop=new THREE.Group();world.add(laptop);
+var base=new THREE.Mesh(new THREE.BoxGeometry(4.3,.16,2.9),body);laptop.add(base);
+var strip=new THREE.Mesh(new THREE.BoxGeometry(4.32,.03,.04),edge);strip.position.set(0,0,1.45);laptop.add(strip);
+var deck=new THREE.Mesh(new THREE.BoxGeometry(3.8,.02,1.3),new THREE.MeshStandardMaterial({color:0x0a1030,roughness:.8}));deck.position.set(0,.09,-.45);laptop.add(deck);
+var keyMat=new THREE.MeshStandardMaterial({color:0x141c46,roughness:.55,emissive:0x2a4dff,emissiveIntensity:.35});
+var kg=new THREE.BoxGeometry(.235,.035,.2),keys=[];
+for(var r=0;r<4;r++)for(var c=0;c<13;c++){var k=new THREE.Mesh(kg,keyMat.clone());k.position.set(-1.62+c*.27,.115,-.97+r*.28);laptop.add(k);keys.push(k)}
+var pad=new THREE.Mesh(new THREE.BoxGeometry(1.25,.02,.75),new THREE.MeshStandardMaterial({color:0x26346e,metalness:.7,roughness:.3}));pad.position.set(0,.09,.82);laptop.add(pad);
+var lidPivot=new THREE.Group();lidPivot.position.set(0,.08,-1.45);laptop.add(lidPivot);
+var lid=new THREE.Mesh(new THREE.BoxGeometry(4.3,2.8,.12),body);lid.position.set(0,1.4,0);lidPivot.add(lid);
+var scr=new THREE.Mesh(new THREE.PlaneGeometry(4.0,2.5),new THREE.MeshBasicMaterial({map:tex}));scr.position.set(0,1.42,.065);lidPivot.add(scr);
+var lidOpen=-.26;lidPivot.rotation.x=reduce?lidOpen:1.45;
+laptop.rotation.x=.16;laptop.position.y=-.6;
+
+var ring=new THREE.Mesh(new THREE.TorusGeometry(3.5,.04,16,180),edge);ring.rotation.x=Math.PI/2.25;world.add(ring);
+var ring2=new THREE.Mesh(new THREE.TorusGeometry(4,.014,8,180),new THREE.MeshBasicMaterial({color:0x4f86ff,transparent:true,opacity:.65}));ring2.rotation.x=Math.PI/2.1;ring2.rotation.y=.25;world.add(ring2);
+/* orbiting data packets on ring */
+var packets=[];for(var q=0;q<6;q++){var pk=new THREE.Mesh(new THREE.SphereGeometry(.07,12,12),new THREE.MeshBasicMaterial({color:q%2?0xffb21a:0x7fb0ff}));world.add(pk);packets.push(pk)}
+
+var floaters=[];
+function addF(geo,mat,pos,spd){var m=new THREE.Mesh(geo,mat);m.position.copy(pos);m.userData={b:pos.clone(),s:spd,o:Math.random()*6};world.add(m);floaters.push(m);return m}
+var chipM=new THREE.MeshStandardMaterial({color:0x10183a,metalness:.7,roughness:.25,emissive:0x2f6bff,emissiveIntensity:.35});
+addF(new THREE.BoxGeometry(.75,.12,.75),chipM,new THREE.Vector3(-3.2,2,.4),.9);
+addF(new THREE.BoxGeometry(1.5,.06,.38),new THREE.MeshStandardMaterial({color:0x1d8a46,metalness:.4,roughness:.4,emissive:0x0a3d1d,emissiveIntensity:.4}),new THREE.Vector3(3.1,2.3,-.4),.7);
+addF(new THREE.BoxGeometry(.95,.1,.62),new THREE.MeshStandardMaterial({color:0x22262e,metalness:.85,roughness:.22,emissive:0xffae12,emissiveIntensity:.15}),new THREE.Vector3(3.3,-1.35,1),1.1);
+addF(new THREE.BoxGeometry(.5,.1,.5),chipM,new THREE.Vector3(-3,-1.55,1.2),1.3);
+addF(new THREE.OctahedronGeometry(.3),edge,new THREE.Vector3(-1.3,3.1,-1),1.5);
+addF(new THREE.IcosahedronGeometry(.22),new THREE.MeshStandardMaterial({color:0x4f86ff,emissive:0x2f6bff,emissiveIntensity:.7,metalness:.3,flatShading:true}),new THREE.Vector3(1.6,3.2,-.6),1.2);
+
+var N=420,pg=new THREE.BufferGeometry(),pa=new Float32Array(N*3);
+for(var i=0;i<N;i++){var a=Math.random()*Math.PI*2,rr=2.6+Math.random()*4;pa[i*3]=Math.cos(a)*rr;pa[i*3+1]=(Math.random()-.5)*6;pa[i*3+2]=Math.sin(a)*rr-1}
+pg.setAttribute('position',new THREE.BufferAttribute(pa,3));
+var pm=new THREE.PointsMaterial({color:0x8fb0ff,size:.05,transparent:true,opacity:.8,depthWrite:false});
+var pts=new THREE.Points(pg,pm);world.add(pts);
+
+window.__scene={theme:function(){var d=isDark();pm.color.set(d?0x8fb0ff:0x2f6bff);pm.opacity=d?.8:.55;halo.material.opacity=d?1:.7}};
+window.__scene.theme();
+
+var mx=0,my=0,tx=0,ty=0,drag=false,dx=0,spin=0;
+stage.addEventListener('pointermove',function(e){var rc=stage.getBoundingClientRect();mx=(e.clientX-rc.left)/rc.width-.5;my=(e.clientY-rc.top)/rc.height-.5;if(drag){spin+=(e.clientX-dx)*.01;dx=e.clientX}});
+stage.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'){drag=true;dx=e.clientX}});
+addEventListener('pointerup',function(){drag=false});
+stage.addEventListener('pointerleave',function(){mx=my=0});
+
+function size(){var w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+size();addEventListener('resize',size);
+
+/* intro: open the lid */
+if(window.gsap&&!reduce){gsap.to(lidPivot.rotation,{x:lidOpen,duration:2,ease:'expo.inOut',delay:.6});gsap.from(world.scale,{x:.7,y:.7,z:.7,duration:1.8,ease:'expo.out',delay:.4});
+  var sp={p:0};gsap.to(sp,{p:1,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true},onUpdate:function(){world.position.y=-sp.p*1.2;world.rotation.z=sp.p*.15}});}
+else lidPivot.rotation.x=lidOpen;
+
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(stage);
+var t0=performance.now(),last=0;
+function loop(now){requestAnimationFrame(loop);if(!vis)return;
+  var t=(now-t0)/1000;
+  tx+=(mx-tx)*.05;ty+=(my-ty)*.05;spin*=.96;
+  world.rotation.y=(reduce?0:Math.sin(t*.32)*.5)+tx*.7+spin;
+  world.rotation.x=ty*.25;
+  if(!reduce){
+    laptop.position.y=-.6+Math.sin(t*1.1)*.12;
+    ring.rotation.z=t*.22;ring2.rotation.z=-t*.16;pts.rotation.y=t*.035;
+    halo.material.rotation=t*.1;halo.scale.setScalar(9+Math.sin(t*1.4)*.4);
+    packets.forEach(function(p,i){var a=t*.7+i*(Math.PI*2/6);var v=new THREE.Vector3(Math.cos(a)*3.5,Math.sin(a)*3.5,0);v.applyEuler(ring.rotation);p.position.copy(v)});
+    floaters.forEach(function(f){var u=f.userData;f.position.y=u.b.y+Math.sin(t*u.s+u.o)*.28;f.rotation.x=t*u.s*.5;f.rotation.y=t*u.s*.7});
+    var wave=(t*6)%16;keys.forEach(function(k,ix){var col=ix%13;k.material.emissiveIntensity=.25+Math.max(0,1-Math.abs(col-wave+1.5))*1.2});
+  }
+  if(now-last>50){drawScreen(t);last=now}
+  renderer.render(scene,cam);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
